@@ -401,7 +401,7 @@ def eval_genomes(genomes, config):
         #     break
 
 
-def run(config_file):
+def run(config_file): 
     """
     runs the NEAT algorithm to train a neural network to play flappy bird.
     :param config_file: location of config file
