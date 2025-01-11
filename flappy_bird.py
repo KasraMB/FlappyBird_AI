@@ -108,7 +108,7 @@ class Bird:
             self.img = self.IMGS[0]
             self.img_count = 0
 
-        # so when bird is nose diving it isn't flapping
+        # when bird is nose diving it isn't flapping
         if self.tilt <= -80:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME*2
@@ -353,7 +353,7 @@ def eval_genomes(genomes, config):
             # send bird location, top pipe location and bottom pipe location and determine from network whether to jump or not
             output = nets[birds.index(bird)].activate((bird.y, abs(bird.y - pipes[pipe_ind].height), abs(bird.y - pipes[pipe_ind].bottom)))
 
-            if output[0] > 0.5:  # we use a tanh activation function so result will be between -1 and 1. if over 0.5 jump
+            if output[0] > 0.5:  # use a tanh activation function so result will be between -1 and 1. if over 0.5 jump
                 bird.jump()
 
         base.move()
@@ -396,9 +396,9 @@ def eval_genomes(genomes, config):
         draw_window(WIN, birds, pipes, base, score, gen, pipe_ind)
 
         # break if score gets large enough
-        '''if score > 20:
-            pickle.dump(nets[0],open("best.pickle", "wb"))
-            break'''
+        # if score > 20:
+        #     pickle.dump(nets[0],open("best.pickle", "wb"))
+        #     break
 
 
 def run(config_file):
